@@ -1,0 +1,12 @@
+{
+  "name": "australiangamingleague",
+  "description": "Gaming, tournaments, leaderboards, predictions.",
+  "main": "server.js",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AustralianGamingLeague/australiangamingleague.github.io.git"
+  },
+  "dependencies": {
+  }
+}
