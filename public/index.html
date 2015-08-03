@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app="AGL">
 
   <head>
+    <base href="/">
     <title>Australian Gaming League</title>
     <meta name="google-site-verification" content="jbOss5jujZz1DTXoRw2TKtv10EjFLDBqqoKD4Kxp6Xc" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- JS libs -->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="libs/angular-resource/angular-resource.min.js"></script>
+
+    <!-- Angular Config -->
+    <script src="app.js"></script>
+
+    <!-- Services -->
+
+    <!-- Controllers -->
+    <script src="javascript/controllers/appController.js"></script>
+    <script src="javascript/controllers/homePageController.js"></script>
+    <script src="javascript/controllers/apiTesterController.js"></script>
+
   </head>
 
   <body>
     <h1>This is just a test.</h1>
+
+    <div data-ng-view></div>
+
   </body>
 
 </html>
