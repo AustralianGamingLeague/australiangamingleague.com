@@ -13,6 +13,9 @@ How to install all dependencies required to run this project.
 ### Bower
 `sudo npm install -g bower`
 
+#### If on Ubuntu
+`sudo ln -s /usr/bin/nodejs /usr/bin/node`
+
 ### Checkout repository
 `git clone git@github.com:AustralianGamingLeague/australiangamingleague.github.io.git`
 

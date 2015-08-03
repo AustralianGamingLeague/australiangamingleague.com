@@ -8,5 +8,10 @@
     "url": "https://github.com/AustralianGamingLeague/australiangamingleague.github.io.git"
   },
   "dependencies": {
+    "bootstrap": "latest",
+    "jquery": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-resource": "latest"
   }
 }
