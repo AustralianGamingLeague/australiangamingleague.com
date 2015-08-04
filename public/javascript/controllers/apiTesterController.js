@@ -8,18 +8,6 @@ var apiTesterController = angular.module('apiTesterController', ['ngResource']);
 apiTesterController.controller('apiTesterController', ['$scope', '$resource',
     function($scope, $resource) {
 
-        var User = $resource('/api/users', {}, {
-            NewUser : { method : 'POST',
-                        params : {
-                            public_id   : '@public_id',
-                            username    : '@username',
-                            password    : '@password',
-                            email       : '@email',
-                        },
-                        isArray : false
-            },
-        });
-
         $scope.httpMethods = ['GET', 'POST', 'PUT', 'DELETE'];
         $scope.selectedMethod = $scope.httpMethods[0];
 
@@ -33,9 +21,6 @@ apiTesterController.controller('apiTesterController', ['$scope', '$resource',
                 name    : '',
                 value   : '',
             });
-
-            console.log("Adding param field:");
-            console.log($scope.params);
         };
 
         $scope.RemoveParam = function(id) {
@@ -55,13 +40,20 @@ apiTesterController.controller('apiTesterController', ['$scope', '$resource',
         }
 
         $scope.Submit = function() {
-            User.NewUser(
-                {
-                    public_id   : 'JD7EN3JE',
-                    username    : 'Bob',
-                    password    : 'lwjn38hnbe35bve6',
-                    email       : 'bobs-news@gmail.com',
+            var paramsObject = {};
+            for (var i = 0; i < $scope.params.length; i++) {
+                var param = $scope.params[i];
+                paramsObject[param.name] = param.value;
+            }
+
+            var User = $resource($scope.apiString, {}, {
+                NewUser : { method : $scope.selectedMethod,
+                            isArray : false
                 },
+            });
+
+            User.NewUser(
+                paramsObject,
                 function APIResponse(response) {
                     console.log('Response from API!');
                     console.log(response);
