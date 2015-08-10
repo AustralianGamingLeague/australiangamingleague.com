@@ -29,6 +29,3 @@ In project directory `npm install`
 `sudo apt-get install mysql-server`
 
 TODO still need a clean way to load database and it's data
-
-### Mocha test framework
-`npm install -g mocha`
