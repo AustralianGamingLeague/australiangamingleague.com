@@ -1,4 +1,5 @@
 # australiangamingleague
+[![Build Status](https://travis-ci.org/travis-ci/travis-web.png?branch=master)](https://travis-ci.org/AustralianGamingLeague/australiangamingleague.github.io)
 Gaming, tournaments, learderboards, predictions. 
 
 # Installation
