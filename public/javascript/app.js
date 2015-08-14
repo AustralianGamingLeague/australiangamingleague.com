@@ -1,7 +1,7 @@
 (function(){
-"use strict";
+'use strict';
 
-var app = angular.module('AGL', ['ngRoute', 'appController', 'homePageController', 'apiTesterController']);
+var app = angular.module('AGL', ['ngRoute', 'appController', 'homePageController']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
@@ -9,10 +9,6 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         .when('/', {
             templateUrl : '/views/home.html',
             controller  : 'homePageController',
-        })
-        .when('/api-tester', {
-            templateUrl : '/views/apiTester.html',
-            controller  : 'apiTesterController',
         })
         .otherwise({
             redirectTo  : '/',
