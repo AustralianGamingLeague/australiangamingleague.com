@@ -23,7 +23,7 @@ app.use(express.static(__dirname + '/public'));
 //  Server Routes
 //==============================================================================
 
-require('AGL/routes')(app);
+require('AGL/api/routes')(app);
 
 //==============================================================================
 //  Start Server
