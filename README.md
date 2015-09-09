@@ -5,16 +5,13 @@ Gaming, tournaments, learderboards, predictions.
 How to install all dependencies required to run this project.
 
 ### Node.js
-`sudo apt-get install nodejs`
+install Node js v0.12.x
 
 ### Node Package Manager
 `sudo apt-get install npm`
 
 ### Bower
 `sudo npm install -g bower`
-
-#### If on Ubuntu
-`sudo ln -s /usr/bin/nodejs /usr/bin/node`
 
 ### Checkout repository
 `git clone git@github.com:AustralianGamingLeague/australiangamingleague.github.io.git`
