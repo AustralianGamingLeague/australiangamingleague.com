@@ -27,15 +27,15 @@ In project directory `bower install`
 In project directory `npm install`
 
 ### MySQL
-## Install SQL server
+#### Install SQL server
 `sudo apt-get install mysql-server`
-## Obtain SQL files
+#### Obtain SQL files
 `AGLDatabase.sql`
 `AGLTables.sql`
 `AGLUser.sql`
-## Create database
+#### Create database
 `mysql -u root -p < AGLDatabase.sql`
-## Create user
+#### Create user
 `mysql -u root -p < AGLUser.sql`
-## Create tables
+#### Create tables
 `mysql -u root -p AGL_DB < AGLTables.sql`
