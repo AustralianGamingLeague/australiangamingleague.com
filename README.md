@@ -16,6 +16,10 @@ install Node js v0.12.x
 ### Checkout repository
 `git clone git@github.com:AustralianGamingLeague/australiangamingleague.github.io.git`
 
+### Obtain AGL config file
+Obtain the config.json file. This is not stored in source control.
+It goes in the root directory of the project.
+
 ### Install Bower packages
 In project directory `bower install`
 
@@ -23,6 +27,15 @@ In project directory `bower install`
 In project directory `npm install`
 
 ### MySQL
+## Install SQL server
 `sudo apt-get install mysql-server`
-
-TODO still need a clean way to load database and it's data
+## Obtain SQL files
+`AGLDatabase.sql`
+`AGLTables.sql`
+`AGLUser.sql`
+## Create database
+`mysql -u root -p < AGLDatabase.sql`
+## Create user
+`mysql -u root -p < AGLUser.sql`
+## Create tables
+`mysql -u root -p AGL_DB < AGLTables.sql`
