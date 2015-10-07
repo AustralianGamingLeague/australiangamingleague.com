@@ -8,6 +8,7 @@
     "url": "https://github.com/AustralianGamingLeague/australiangamingleague.github.io.git"
   },
   "dependencies": {
+    "async": "^1.4.2",
     "body-parser": "^1.13.2",
     "chai": "^3.2.0",
     "express": "^4.13.1",
