@@ -8,6 +8,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/AGL-style.css">
 
     <!-- JS libs -->
     <script src="libs/jquery/dist/jquery.min.js"></script>
@@ -15,7 +16,7 @@
     <script src="libs/angular/angular.min.js"></script>
     <script src="libs/angular-route/angular-route.min.js"></script>
     <script src="libs/angular-resource/angular-resource.min.js"></script>
-    <script src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 
     <!-- Angular Config -->
     <script src="javascript/app.js"></script>
@@ -23,13 +24,22 @@
     <!-- Services -->
 
     <!-- Controllers -->
-    <script src="javascript/controllers/appController.js"></script>
-    <script src="javascript/controllers/homePageController.js"></script>
+    <script src="javascript/controllers/appControllers.js"></script>
+    <script src="javascript/controllers/modals/loginControllers.js"></script>
+    <script src="javascript/controllers/homePageControllers.js"></script>
 
   </head>
 
-  <body>
-    <h1>This is just a test.</h1>
+  <body data-ng-controller="appController">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a href="" data-ng-click="openLoginModal()">Login / Signup</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
     <div data-ng-view></div>
 

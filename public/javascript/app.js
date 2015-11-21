@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 
-var app = angular.module('AGL', ['ngRoute', 'appController', 'homePageController']);
+var app = angular.module('AGL', ['ngRoute', 'appControllers', 'homePageControllers']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
