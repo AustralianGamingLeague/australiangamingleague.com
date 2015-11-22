@@ -14,9 +14,9 @@ appController.controller('appController', ['$scope', '$uibModal',
 			});
 
 			modalInstance.result.then(function ModalFinished () {
-				console.log('close login modal'); // Will be called from $uibModalInstance.close() in modal controller
+				console.log('close login modal');
 			}, function ModalClosed () {
-				console.log('dismiss login modal'); // can be manually called from $uibModalInstance.dismiss in modal controller
+				console.log('dismiss login modal');
 			});
 
 		};

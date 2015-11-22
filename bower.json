@@ -13,6 +13,8 @@
     "angular-resource": "latest",
     "angular-route": "latest",
     "bootstrap": "latest",
-    "jquery": "latest"
+    "jquery": "latest",
+    "components-font-awesome": "latest",
+    "bootstrap-social": "latest"
   }
 }
