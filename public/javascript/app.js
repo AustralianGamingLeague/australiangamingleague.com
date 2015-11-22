@@ -1,7 +1,9 @@
 (function(){
 'use strict';
 
-var app = angular.module('AGL', ['ngRoute', 'appControllers', 'homePageControllers']);
+// TODO Doco
+
+var app = angular.module('AGL', ['ngRoute', 'appControllers', 'homePageControllers', 'formControllers']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
@@ -10,6 +12,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
             templateUrl : '/views/home.html',
             controller  : 'homePageController',
         })
+		.when('/createAnAccount', {
+			templateUrl : '/views/forms/createAnAccount.html',
+			controller  : 'formController',
+		})
         .otherwise({
             redirectTo  : '/',
         });

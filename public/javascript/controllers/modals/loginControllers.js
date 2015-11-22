@@ -1,10 +1,12 @@
 (function(){
 'use strict';
 
-var loginController = angular.module('loginControllers', []);
+// TODO Doco
 
-loginController.controller('loginController', ['$scope', '$uibModalInstance',
-	function ($scope, $uibModalInstance) {
+var loginController = angular.module('loginControllers', ['siteNavigationService']);
+
+loginController.controller('loginController', ['$scope', '$uibModalInstance', 'siteNavigation',
+	function ($scope, $uibModalInstance, siteNavigation) {
 
 		$scope.loginDetails = {
 			login    : undefined,
@@ -13,7 +15,7 @@ loginController.controller('loginController', ['$scope', '$uibModalInstance',
 
 		$scope.login = function () {
 			// TODO add login logic here
-			$uibModalInstance.close();
+			$uibModalInstance.close('login');
 		};
 
 		$scope.cancel = function () {
@@ -21,7 +23,8 @@ loginController.controller('loginController', ['$scope', '$uibModalInstance',
 		};
 
 		$scope.createAnAccount = function () {
-			// TODO redirect to new account form here.
+			siteNavigation.loadCreateAnAccountForm();
+			$uibModalInstance.close('createAnAccount');
 		};
 
 		$scope.forgotPassword = function () {

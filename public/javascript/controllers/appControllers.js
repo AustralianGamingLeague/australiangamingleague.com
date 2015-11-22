@@ -1,10 +1,14 @@
 (function(){
 'use strict';
 
+// TODO Doco
+
 var appController = angular.module('appControllers', ['ui.bootstrap', 'loginControllers']);
 
 appController.controller('appController', ['$scope', '$uibModal',
     function($scope, $uibModal) {
+
+// Login Modal
 
 		$scope.openLoginModal = function () {
 
@@ -13,13 +17,14 @@ appController.controller('appController', ['$scope', '$uibModal',
 				controller  : 'loginController'
 			});
 
-			modalInstance.result.then(function ModalFinished () {
-				console.log('close login modal');
+			modalInstance.result.then(function ModalFinished (action) {
+				console.log('close login modal. Action: ' + action);
 			}, function ModalClosed () {
 				console.log('dismiss login modal');
 			});
 
 		};
+
 
     }]);
 
