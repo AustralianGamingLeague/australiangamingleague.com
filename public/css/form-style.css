@@ -1,0 +1,8 @@
+form.default-form {
+	max-width: 35%;
+	margin: 0 auto;
+}
+
+.error-text {
+	color: #a94442;
+}

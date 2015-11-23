@@ -3,7 +3,7 @@
 
 // TODO Doco
 
-var app = angular.module('AGL', ['ngRoute', 'appControllers', 'homePageControllers', 'formControllers']);
+var app = angular.module('AGL', ['ngRoute', 'appControllers', 'homePageControllers', 'createAnAccountControllers']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
@@ -14,7 +14,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         })
 		.when('/createAnAccount', {
 			templateUrl : '/views/forms/createAnAccount.html',
-			controller  : 'formController',
+			controller  : 'createAnAccountController',
 		})
         .otherwise({
             redirectTo  : '/',

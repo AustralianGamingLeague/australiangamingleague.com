@@ -1,1 +1,42 @@
+ <link rel="stylesheet" href="css/form-style.css">
+
 <h1>Create an Account</h1>
+<form class="default-form">
+	<fieldset class="form-group row" data-ng-class="{'has-error' : validationErrors.email}">
+		<input type="text" class="form-control" id="input-email"
+			placeholder="Enter Email Address" popover-placement="right"
+			popover-trigger="mouseenter" uib-popover="{{EMAIL_HINT}}"
+			data-ng-model="formData.email"
+		/>
+		<small class="text-muted error-text">{{validationErrors.email[0]}}</small>
+	</fieldset>
+	<fieldset class="form-group row" data-ng-class="{'has-error' : validationErrors.username}">
+		<input type="text" class="form-control" id="input-username"
+			placeholder="Enter Username" popover-placement="right"
+			popover-trigger="mouseenter" uib-popover="{{USERNAME_HINT}}"
+			data-ng-model="formData.username"
+		/>
+		<small class="text-muted error-text">{{validationErrors.username[0]}}</small>
+	</fieldset>
+	<fieldset class="form-group row" data-ng-class="{'has-error' : validationErrors.password}">
+		<input type="password" class="form-control" id="input-password"
+			placeholder="Enter Password" popover-placement="right"
+			popover-trigger="mouseenter" uib-popover="{{PASSWORD_HINT}}"
+			data-ng-model="formData.password"
+		/>
+		<small class="text-muted error-text">{{validationErrors.password[0]}}</small>
+	</fieldset>
+	<fieldset class="form-group row" data-ng-class="{'has-error' : validationErrors.passwordConfirmation}">
+		<input type="password" class="form-control" id="confirm-password"
+			placeholder="Confirm Password" popover-placement="right"
+			popover-trigger="mouseenter" uib-popover="{{PASSWORD_CONFIRM_HINT}}"
+			data-ng-model="formData.passwordConfirmation"
+		/>
+		<small class="text-muted error-text">{{validationErrors.passwordConfirmation[0]}}</small>
+	</fieldset>
+	<fieldset class="form-group row">
+		<button type="button" class="btn btn-primary" data-ng-click="createAccount()">
+			Create Account
+		</button>
+	</fieldset>
+</form>
