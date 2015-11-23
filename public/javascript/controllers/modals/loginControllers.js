@@ -24,7 +24,7 @@ loginController.controller('loginController', ['$scope', '$uibModalInstance', 's
 
 		$scope.createAnAccount = function () {
 			siteNavigation.loadCreateAnAccountForm();
-			$uibModalInstance.close('createAnAccount');
+			$uibModalInstance.dismiss();
 		};
 
 		$scope.forgotPassword = function () {
@@ -32,14 +32,6 @@ loginController.controller('loginController', ['$scope', '$uibModalInstance', 's
 		};
 
 		$scope.loginFacbook = function () {
-			// TODO
-		};
-
-		$scope.loginTwitter = function () {
-			// TODO
-		};
-
-		$scope.loginGoogle = function () {
 			// TODO
 		};
 

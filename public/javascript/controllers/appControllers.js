@@ -3,10 +3,16 @@
 
 // TODO Doco
 
-var appController = angular.module('appControllers', ['ui.bootstrap', 'loginControllers']);
+var appController = angular.module('appControllers', ['ui.bootstrap', 'loginControllers', 'siteNavigationService']);
 
-appController.controller('appController', ['$scope', '$uibModal',
-    function($scope, $uibModal) {
+appController.controller('appController', ['$scope', '$uibModal', 'siteNavigation',
+    function($scope, $uibModal, siteNavigation) {
+
+// Navigation
+
+		$scope.goHome = function () {
+			siteNavigation.loadHomePage();
+		};
 
 // Login Modal
 
