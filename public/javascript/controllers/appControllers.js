@@ -14,7 +14,8 @@ appController.controller('appController', ['$scope', '$uibModal',
 
 			var modalInstance = $uibModal.open({
 				templateUrl : '/partials/modals/login.html',
-				controller  : 'loginController'
+				controller  : 'loginController',
+				size        : 'sm'
 			});
 
 			modalInstance.result.then(function ModalFinished (action) {
