@@ -1,10 +1,10 @@
 (function(){
 'use strict';
 
-var createAnAccountController = angular.module('createAnAccountControllers', []);
+var createAnAccountController = angular.module('createAnAccountControllers', ['aglApiService']);
 
-createAnAccountController.controller('createAnAccountController', ['$scope',
-	function ($scope) {
+createAnAccountController.controller('createAnAccountController', ['$scope', 'aglApi',
+	function ($scope, aglApi) {
 
 		// Form Hints
 
@@ -17,7 +17,7 @@ createAnAccountController.controller('createAnAccountController', ['$scope',
 
 		$scope.formData = undefined;
 
-		// Validation
+		// Validation TODO This is business logic and should be moved to a service.
 
 		$scope.validationErrors = undefined;
 
@@ -67,7 +67,8 @@ createAnAccountController.controller('createAnAccountController', ['$scope',
 		$scope.createAccount = function () {
 			$scope.validationErrors = validate($scope.formData, constraints);
 			if (!$scope.validationErrors) {
-				
+				// TODO need to implement a 'return address' so that once the account has been created
+				// you are returned to whatever page you were on. 
 			}
 		};
 
