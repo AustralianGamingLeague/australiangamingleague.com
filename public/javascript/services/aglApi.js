@@ -6,11 +6,20 @@
 
 // TODO need to open a loading modal here maybe
 
-var aglApiService = angular.module('aglApiService', []);
+var aglApiService = angular.module('aglApiService', ['ui.bootstrap']);
 
 aglApiService.factory('aglApi', ['$http', function ($http) {
 
-	return {
+	function handleSuccessResponse (response, callback) {
+		return callback(null, response.data.data);
+	}
+
+	function handleErrorResponse (response, callback) {
+		// TODO need to check if there are any errors first. (500 response etc)
+		return callback(response.data.errors);
+	}
+
+	var AGL_API = {
 
 		createUser : function (properties, callback) {
 			$http({
@@ -30,15 +39,17 @@ aglApiService.factory('aglApi', ['$http', function ($http) {
 		},
 
 	};
+
+	return function (apiName, data, callback) {
+		if (!AGL_API.hasOwnProperty(apiName)) {
+			throw new Error('API \'' + apiName + '\' does not exist.');
+		}
+		if (!validate.isFunction(callback)) {
+			throw new Error('callback argument must be a function');
+		}
+		return AGL_API[apiName](data, callback);
+	};
+
 }]);
-
-function handleSuccessResponse (response, callback) {
-	return callback(null, response.data.data);
-}
-
-function handleErrorResponse (response, callback) {
-	// TODO need to check if there are any errors first. (500 response etc)
-	return callback(response.data.errors);
-}
 
 })();

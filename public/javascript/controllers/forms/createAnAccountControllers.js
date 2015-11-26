@@ -69,6 +69,10 @@ createAnAccountController.controller('createAnAccountController', ['$scope', 'ag
 			if (!$scope.validationErrors) {
 				// TODO need to implement a 'return address' so that once the account has been created
 				// you are returned to whatever page you were on. 
+				aglApi('createUser', $scope.formData, function result (errors, username) {
+					console.log(errors);
+					console.log(username);
+				});
 			}
 		};
 
